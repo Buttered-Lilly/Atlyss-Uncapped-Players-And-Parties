@@ -37,6 +37,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ATLYSS - Copy\ATLYSS_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\..\..\download\BepInEx_win_x64_5.4.23.2\BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
     <Reference Include="MelonLoader">
       <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ATLYSS - Copy\MelonLoader\net6\MelonLoader.dll</HintPath>
     </Reference>
@@ -108,6 +111,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bepin.cs" />
+    <Compile Include="Melon.cs" />
     <Compile Include="Uncapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

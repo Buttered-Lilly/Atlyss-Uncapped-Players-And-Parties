@@ -6,14 +6,19 @@ using MelonLoader.TinyJSON;
 using MelonLoader.Utils;
 using Mirror;
 using UnityEngine;
+using static MelonLoader.MelonLogger;
 
 namespace Uncapped_Players_And_Parties
 {
-    public class Uncapper : MelonMod
+    public class Uncapper : MonoBehaviour
     {
+        public static Uncapper Instance;
         PartyObjectBehavior partyPre = null;
-        public override void OnLateInitializeMelon()
+        public Func<string, bool> Log;
+
+        public void Start()
         {
+            Instance = this;
             uncapParties();
         }
 
@@ -32,7 +37,7 @@ namespace Uncapped_Players_And_Parties
             }
             catch (Exception e)
             {
-                MelonLogger.Msg(e);
+                Log(e.ToString());
             }
         }
 
@@ -48,7 +53,7 @@ namespace Uncapped_Players_And_Parties
                 }
                 catch (Exception obj)
                 {
-                    MelonLogger.Msg(obj);
+                    Uncapper.Instance.Log(obj.ToString());
                 }
             }
         }
@@ -91,7 +96,7 @@ namespace Uncapped_Players_And_Parties
                 }
                 catch (Exception ex)
                 {
-                    MelonLogger.Msg(ex.Message);
+                    Uncapper.Instance.Log(ex.ToString());
                 }
             }
         }
