@@ -8,7 +8,7 @@ using Uncapped_Players_And_Parties;
 using UnityEngine;
 using static MelonLoader.MelonLaunchOptions;
 
-[assembly: MelonInfo(typeof(Uncapper), "Lilly's Uncapped Players", "2.0.0", "Lilly")]
+[assembly: MelonInfo(typeof(Uncapper), "Lilly's Uncapped Players", "4.0.0", "Lilly")]
 [assembly: MelonGame("KisSoft", "ATLYSS")]
 [assembly: MelonOptionalDependencies("BepInEx")]
 

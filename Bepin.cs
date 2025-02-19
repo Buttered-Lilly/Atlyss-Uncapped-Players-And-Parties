@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Uncapped_Players_And_Parties
 {
-    [BepInPlugin("022aff51-6d76-45e7-b7ba-ef9e6f53cc53", "Lilly's Uncapped Players", "2.0.0")]
+    [BepInPlugin("022aff51-6d76-45e7-b7ba-ef9e6f53cc53", "Lilly's Uncapped Players", "4.0.0")]
     public class Bepin : BaseUnityPlugin
     {
         Uncapper core;
