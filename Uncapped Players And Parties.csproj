@@ -115,6 +115,9 @@
     <Compile Include="Melon.cs" />
     <Compile Include="Uncapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
+  </ItemGroup>	
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="COPY &quot;$(TargetPath)&quot; &quot;H:\SteamLibrary\steamapps\common\ATLYSS\Mods&quot;" />
+	</Target>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,7 +19,7 @@ namespace Uncapped_Players_And_Parties
             GameObject g = GameObject.Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube));
             g.hideFlags = UnityEngine.HideFlags.HideAndDontSave;
             core = g.AddComponent<Uncapper>();
-            core.Log = logger;
+            core.Logger = logger;
             var harmony = new HarmonyLib.Harmony("Lilly's Uncapped Players");
             harmony.PatchAll();
         }

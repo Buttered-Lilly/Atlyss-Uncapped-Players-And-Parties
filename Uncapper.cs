@@ -1,12 +1,8 @@
 ﻿using System;
 using System.IO;
 using HarmonyLib;
-using MelonLoader;
-using MelonLoader.TinyJSON;
-using MelonLoader.Utils;
-using Mirror;
 using UnityEngine;
-using static MelonLoader.MelonLogger;
+using UnityEngine.UI;
 
 namespace Uncapped_Players_And_Parties
 {
@@ -14,7 +10,8 @@ namespace Uncapped_Players_And_Parties
     {
         public static Uncapper Instance;
         PartyObjectBehavior partyPre = null;
-        public Func<string, bool> Log;
+        public Func<string, bool> Logger;
+
 
         public void Start()
         {
@@ -37,7 +34,7 @@ namespace Uncapped_Players_And_Parties
             }
             catch (Exception e)
             {
-                Log(e.ToString());
+                Uncapper.Instance.Logger(e.ToString());
             }
         }
 
@@ -53,7 +50,7 @@ namespace Uncapped_Players_And_Parties
                 }
                 catch (Exception obj)
                 {
-                    Uncapper.Instance.Log(obj.ToString());
+                    Uncapper.Instance.Logger(obj.ToString());
                 }
             }
         }
@@ -71,6 +68,7 @@ namespace Uncapped_Players_And_Parties
             {
                 try
                 {
+                    dataPath = dataPath.Replace("profileCollections", "Settings");
                     if (File.Exists(dataPath + "/hostSettings.json"))
                     {
                         string json = File.ReadAllText(dataPath + "/hostSettings.json");
@@ -96,7 +94,7 @@ namespace Uncapped_Players_And_Parties
                 }
                 catch (Exception ex)
                 {
-                    Uncapper.Instance.Log(ex.ToString());
+                    Uncapper.Instance.Logger(ex.ToString());
                 }
             }
         }

@@ -1,14 +1,8 @@
 ﻿using MelonLoader;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Uncapped_Players_And_Parties;
 using UnityEngine;
-using static MelonLoader.MelonLaunchOptions;
 
-[assembly: MelonInfo(typeof(Uncapper), "Lilly's Uncapped Players", "4.0.0", "Lilly")]
+[assembly: MelonInfo(typeof(Uncapped_Players_And_Parties.MelonLoad), "Lilly's Uncapped Players", "4.0.0", "Lilly", null)]
 [assembly: MelonGame("KisSoft", "ATLYSS")]
 [assembly: MelonOptionalDependencies("BepInEx")]
 
@@ -24,10 +18,10 @@ namespace Uncapped_Players_And_Parties
             GameObject g = GameObject.Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube));
             g.hideFlags = UnityEngine.HideFlags.HideAndDontSave;
             core = g.AddComponent<Uncapper>();
-            core.Log = logger;
+            core.Logger = logger;
         }
 
-        bool logger(string msg)
+        public bool logger(string msg)
         {
             MelonLogger.Msg(msg);
             return true;
